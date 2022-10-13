@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html th:fragment="layout(content)" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css"
+        th:href="@{/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+        <div th:replace="~{fragments/navbar.html :: navigation}"></div>
+        <div th:replace="~{fragments/main.html :: main(${content})}"></div>
+</body>
+</html>

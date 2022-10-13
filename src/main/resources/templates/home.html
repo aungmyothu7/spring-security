@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/mainLayout :: layout(~{::main})}" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<main role="main">
+    <div class="container mt-5 p-5 bg-light">
+        <h3>Spring Security Home Page</h3>
+        <p>Sample RoleHierarchy Security - Spring MVC , Thymeleaf Template Engine . . .</p>
+        <div th:replace="~{fragments/account-list.html :: accountList}"></div>
+    </div>
+</main>
+</body>
+</html>
