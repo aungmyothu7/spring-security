@@ -22,6 +22,12 @@ public class RolesHierarchyConfiguration {
                         .append(CUSTOMERS_ADMIN,CUSTOMERS_DELETE)
                         .append(CUSTOMERS_ADMIN,CUSTOMERS_PAGE_VIEW)
 
+                        .append(SUPER_ADMIN,EMPLOYEES_ADMIN)
+                        .append(EMPLOYEES_ADMIN,EMPLOYEES_CREATE)
+                        .append(EMPLOYEES_ADMIN,EMPLOYEES_READ)
+                        .append(EMPLOYEES_ADMIN,EMPLOYEES_DELETE)
+                        .append(EMPLOYEES_ADMIN,EMPLOYEES_PAGE_VIEW)
+
                         .build()
         );
 

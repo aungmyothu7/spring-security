@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/mainLayout :: layout(~{::main})}" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<main role="main">
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            <h4>Employees Form</h4>
+          </div>
+          <div class="card-body">
+            <div th:replace="~{fragments/employee-form.html :: employeeForm}"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
