@@ -8,6 +8,6 @@ public class AccountController {
 
     @GetMapping("/account")
     public String showAccountStatus(){
-        return "home";
+        return "account";
     }
 }

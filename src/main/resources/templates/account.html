@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/mainLayout :: layout(~{::main})}" lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<body>
+<main role="main">
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h3>Account Infromation</h3>
+            <h4>Logged User: <span sec:authentication="name"></span></h4>
+            <hr>
+            <h3>Roles</h3>
+            <ul class="list-group" th:each="role : ${#authentication.authorities}">
+                <li class="list-group-item" th:text="${role}"></li>
+            </ul>
+        </div>
+    </div>
+</main>
+</body>
+</html>
