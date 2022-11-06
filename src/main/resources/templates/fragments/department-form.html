@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<form th:fragment="departmentForm" action="#" th:action="@{/create-department}"
+      th:object="${department}"
+      method="post">
+    <div class="row">
+        <div class="form-group">
+            <label for="code">Code</label>
+            <input type="text" id="code" class="form-control"
+                   th:classappend="${#fields.hasErrors('code')} ? 'is-invalid'" th:field="*{code}">
+            <small class="invalid-feedback" th:errors="*{code}"></small>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control"
+                       th:classappend="${#fields.hasErrors('name')} ? 'is-invalid'"
+                       th:field="*{name}">
+                <small class="invalid-feedback" th:errors="*{name}"></small>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="country">Country</label>
+                <input type="text" id="country" class="form-control"
+                       th:classappend="${#fields.hasErrors('country')} ? 'is-invalid'"
+                       th:field="*{country}">
+                <small class="invalid-feedback" th:errors="*{country}"></small>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary">
+</form>
+</body>
+</html>

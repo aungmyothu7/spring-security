@@ -11,7 +11,7 @@ import org.springframework.security.config.annotation.method.configuration.Globa
 
 
 @Configuration
-@EnableGlobalMethodSecurity(securedEnabled = true)
+@EnableGlobalMethodSecurity(securedEnabled = true,jsr250Enabled = true,prePostEnabled = true)
 public class GlobalMethodSecurityConfig
         extends GlobalMethodSecurityConfiguration {
     @Autowired
@@ -26,7 +26,4 @@ public class GlobalMethodSecurityConfig
         );
         return affirmativeBased;
     }
-
-
-
 }

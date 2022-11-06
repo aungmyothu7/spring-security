@@ -28,6 +28,12 @@ public class RolesHierarchyConfiguration {
                         .append(EMPLOYEES_ADMIN,EMPLOYEES_DELETE)
                         .append(EMPLOYEES_ADMIN,EMPLOYEES_PAGE_VIEW)
 
+                        .append(SUPER_ADMIN,DEPARTMENTS_ADMIN)
+                        .append(DEPARTMENTS_ADMIN,DEPARTMENTS_CREATE)
+                        .append(DEPARTMENTS_ADMIN,DEPARTMENTS_READ)
+                        .append(DEPARTMENTS_ADMIN,DEPARTMENTS_DELETE)
+                        .append(DEPARTMENTS_ADMIN,DEPARTMENTS_PAGE_VIEW)
+
                         .build()
         );
 

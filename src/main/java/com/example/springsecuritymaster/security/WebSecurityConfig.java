@@ -43,7 +43,7 @@ public class WebSecurityConfig {
 
         var william = User.withUsername("william")
                 .password("william")
-                .roles(DEPARTMENTS_CREATE,DEPARTMENTS_READ,DEPARTMENTS_PAGE_VIEW)
+                .roles(DEPARTMENTS_CREATE,DEPARTMENTS_DELETE,DEPARTMENTS_PAGE_VIEW)
                 .build();
 
         var lucas = User.withUsername("lucas")
@@ -77,7 +77,6 @@ public class WebSecurityConfig {
                 .expressionHandler(expressionHandler())
                 .mvcMatchers("/","/home").permitAll()
                 .mvcMatchers("/bootstrap/**").permitAll()
-                .mvcMatchers("/customers").hasRole(CUSTOMERS_PAGE_VIEW)
                 .anyRequest()
                 .authenticated()
                 .and()

@@ -7,6 +7,7 @@ import com.example.springsecuritymaster.security.annotation.employees.IsEmployee
 import com.example.springsecuritymaster.security.annotation.employees.IsEmployeesDelete;
 import com.example.springsecuritymaster.security.annotation.employees.IsEmployeesRead;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -22,20 +23,23 @@ public class EmployeesController {
     @Autowired
     private EmployeeDao employeeDao;
 
-    @IsEmployeesRead
+    //@PreAuthorize("hasRole('ROLE_EMPLOYEES_READ')")
     @GetMapping("/employees")
     public ModelAndView listEmployees(){
         return new ModelAndView("employees"
-                ,"employees",employeeDao.findAll());
+                ,"employees"
+                ,employeeDao.findAll());
     }
 
-    @IsEmployeesCreate
+    @PreAuthorize("hasRole('ROLE_EMPLOYEES_CREATE')")
     @GetMapping("/create-employee")
     public String ceateEmployee(Model model){
         model.addAttribute("employee",new Employee());
         return "employee-form";
     }
-    @IsEmployeesCreate
+
+
+    @PreAuthorize("'Test'.equals(#employee.firstName)|| hasRole('ROLE_EMPLOYEES_CREATE')")
     @PostMapping("/create-employee")
     public String saveEmployee(@Valid Employee employee, BindingResult result){
         if(result.hasErrors()){
@@ -45,7 +49,7 @@ public class EmployeesController {
         return "redirect:/employees";
     }
 
-    @IsEmployeesDelete
+    @PreAuthorize("#id >=5 || hasRole('ROLE_EMPLOYEES_DELETE')")
     @GetMapping("/employees/delete")
     public String deleteEmployee(@RequestParam("id")int id){
         employeeDao.deleteById(id);

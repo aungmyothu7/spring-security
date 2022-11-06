@@ -2,7 +2,7 @@ package com.example.springsecuritymaster;
 
 import com.example.springsecuritymaster.dao.CustomerDao;
 import com.example.springsecuritymaster.dao.EmployeeDao;
-import com.example.springsecuritymaster.ds.Customer;
+import com.example.springsecuritymaster.ds.Customers;
 import com.example.springsecuritymaster.ds.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
@@ -40,15 +40,15 @@ public class SpringSecurityMasterApplication {
     @Bean @Transactional @Profile("dev")
     public ApplicationRunner runner(){
         return runner ->{
-           Customer c1=new Customer("AB","John","Doe",
+           Customers c1=new Customers("AB","John","Doe",
                    "Saint Mountain Belly Bridge");
-           Customer c2=new Customer("BC","Barkaley","Clara",
+           Customers c2=new Customers("BC","Barkaley","Clara",
                    "Dream Land");
-           Customer c3=new Customer("AA","Ashaley","Assans",
+           Customers c3=new Customers("AA","Ashaley","Assans",
                    "Dark Buffalo Bridge Road");
-           Customer c4=new Customer("TH","Thomas","Hardy","" +
+           Customers c4=new Customers("TH","Thomas","Hardy","" +
                    "Green Grass Wexssex");
-           Customer c5=new Customer("TM","Thomas","Mann",
+           Customers c5=new Customers("TM","Thomas","Mann",
                    "Park Avenue");
 
            customerDao.save(c1);
@@ -56,7 +56,6 @@ public class SpringSecurityMasterApplication {
            customerDao.save(c3);
            customerDao.save(c4);
            customerDao.save(c5);
-
         };
     }
 }

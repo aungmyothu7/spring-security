@@ -1,7 +1,5 @@
 package com.example.springsecuritymaster.ds;
 
-
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,7 +14,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Getter
 @Setter
-public class Customer {
+public class Customers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -38,10 +36,10 @@ public class Customer {
     @Pattern(regexp = "[\\w .\\-/,]*",message = "Address contains illegal characters.")
     private String address;
 
-    public Customer() {
+    public Customers() {
     }
 
-    public Customer(String code, String firstName, String lastName, String address) {
+    public Customers(String code, String firstName, String lastName, String address) {
         this.code = code;
         this.firstName = firstName;
         this.lastName = lastName;

@@ -25,6 +25,4 @@ public interface SecurityRoles {
     String EMPLOYEES_CREATE = "EMPLOYEES_CREATE";
     String EMPLOYEES_DELETE = "EMPLOYEES_DELETE";
     String EMPLOYEES_PAGE_VIEW = "EMPLOYEES_PAGE_VIEW";
-
-
 }
